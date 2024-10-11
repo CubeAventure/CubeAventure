@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'fr.zartex.CubeAventure'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/"
+    }
+    maven {
+        url = "https://minevolt.net/repo/"
+    }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    compileOnly("org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT")
+    testImplementation("org.ow2.cmi:cmi-api-client:2.2.6")
+}
+
+test {
+    useJUnitPlatform()
+}
